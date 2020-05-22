@@ -15,11 +15,12 @@ import smtplib
 # TODO: move these constants into config file
 # Format: (short name, full name, url)
 plant_templates = [
-    ('PPP', '4" philodendron pink princess', 'https://www.gabriellaplants.com/collections/home-page/products/4-pink-princess-philodendron'),
-    ('5" Jose Buono', '5" philodendron jose buono', 'https://www.gabriellaplants.com/collections/home-page/products/5-philodendron-jose-buono'),
-    ('4" Jose Buono', '5" philodendron jose buono', 'https://www.gabriellaplants.com/collections/home-page/products/4-jose-bueno-philodendron'),
-    ('4 Albo Syngonium', '4" syngonium podophyllum albo-variegatum', 'https://www.gabriellaplants.com/collections/home-page/products/4-variegated-emerald-gem-syngonium-arrow-head-house-plant-nephthytis'),
-    ('3" Gabby', '3" philodendron \'gabby\' sport', 'https://www.gabriellaplants.com/collections/home-page/products/3-gabby-philodendron-sport'),
+    ('4" philodendron pink princess', 'https://www.gabriellaplants.com/collections/home-page/products/4-pink-princess-philodendron'),
+    ('5" philodendron jose buono', 'https://www.gabriellaplants.com/collections/home-page/products/5-philodendron-jose-buono'),
+    ('5" philodendron jose buono', 'https://www.gabriellaplants.com/collections/home-page/products/4-jose-bueno-philodendron'),
+    ('4" syngonium podophyllum albo-variegatum', 'https://www.gabriellaplants.com/collections/home-page/products/4-variegated-emerald-gem-syngonium-arrow-head-house-plant-nephthytis'),
+    ('3" philodendron \'gabby\' sport', 'https://www.gabriellaplants.com/collections/home-page/products/3-gabby-philodendron-sport'),
+    ('4" philodendron birkin', 'https://www.gabriellaplants.com/collections/home-page/products/4-philodendron-birkin')
 ]
 # Email addresses to send to
 toAddress = []
@@ -37,7 +38,7 @@ def main():
     inventory = bs4.BeautifulSoup(getPage.text, 'html.parser')
     for plant in inventory.select('.cd.chp'):  # Iterate through all plants on the website
         # Attempt to match against all templates' full names
-        for j, (_, full_name, _) in enumerate(plant_templates):
+        for j, (full_name, _) in enumerate(plant_templates):
             # Slide a window across the website text to match for these full plant names as a substring
             for i in range(len(plant.text)):
                 chunk = plant.text[i:i+len(full_name)].lower()
@@ -50,11 +51,11 @@ def main():
         conn.ehlo()
         conn.starttls()
         conn.login(my_email, my_password)
-        for short_name, _, url in matched_templates:
+        for  full_name, url in matched:
             conn.sendmail(my_email, toAddress,
                           ('Subject: %s In Stock Alert\n\nCome get your '
                            '%s from Gabriella\'s!\n\n%s\n\n'
-                           'Plant Notifier V1.0') %s (short_name, short_name, url))
+                           'Plant Notifier V1.0') % (full_name, full_name, url))
         conn.quit()
         print('Sent notifs')
     else:
