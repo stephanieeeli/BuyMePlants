@@ -8,4 +8,4 @@ To set this running continuously, go into the crontab file to create a job and s
 
 Go into the configuration file to enter the plants that you would like to track and the emails you would like to notify. You will need the full plant name and the url from the product page. 
 
-If you get an authentification error when trying to log into Gmail, first go to the Google Account and go into Security. There you will see an option for Less Secure Apps. Turn on Access and save. If the authentification continues to occur, visit url[https://accounts.google.com/DisplayUnlockCaptcha] accounts.google.com to unlock a captch first).
+If you get an authentification error when trying to log into Gmail, first go to the Google Account and go into Security. There you will see an option for Less Secure Apps. Turn on Access and save. If the authentification continues to occur, visit url[https://accounts.google.com/DisplayUnlockCaptcha] to unlock a captch first.
