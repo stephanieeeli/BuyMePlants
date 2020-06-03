@@ -1,0 +1,10 @@
+# Include any other plants you would like to track 
+# Format = - name: "full name of plant" 
+#             url: "full URL of plant" 
+plant_templates:
+#    - name:
+#       url: 
+    
+# Add any other email addresses you would like to send to 
+toAddress: 
+#    - add email here  

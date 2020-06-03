@@ -1,32 +1,33 @@
 #!/usr/bin/python
+
 """PlantScraper v1.0
-Scrape GabriellaPlants.com and Logees.com for rare plants!
-First update the configuration file to include email secrets,
-and include any additional plants you wish to track. Then,
-run this script in a cron job and wait! We recommend a delay
-of ~30sec between runs, although neither site explicitly states
-a preference (no robot.txt).
+Scrape GabriellaPlants.com for rare plants!
+First update the crontab -e file and environment variables to
+include email secrets, and the configuration include any additional
+plants you wish to track. Then, run this script in a cron job and
+wait! We recommend a delay of ~30sec between runs, and the robot.txt
+file on the site states that it cannot be run more than once
+every 10 seconds.
 """
 
+import os
 import bs4
 import requests
 import smtplib
+import yaml
 
-# TODO: move these constants into config file
-# Format: (short name, full name, url)
-plant_templates = [
-    ('4" philodendron pink princess', 'https://www.gabriellaplants.com/collections/home-page/products/4-pink-princess-philodendron'),
-    ('5" philodendron jose buono', 'https://www.gabriellaplants.com/collections/home-page/products/5-philodendron-jose-buono'),
-    ('5" philodendron jose buono', 'https://www.gabriellaplants.com/collections/home-page/products/4-jose-bueno-philodendron'),
-    ('4" syngonium podophyllum albo-variegatum', 'https://www.gabriellaplants.com/collections/home-page/products/4-variegated-emerald-gem-syngonium-arrow-head-house-plant-nephthytis'),
-    ('3" philodendron \'gabby\' sport', 'https://www.gabriellaplants.com/collections/home-page/products/3-gabby-philodendron-sport'),
-    ('4" philodendron birkin', 'https://www.gabriellaplants.com/collections/home-page/products/4-philodendron-birkin')
-]
+with open('config.yml', 'r') as file:
+    document = yaml.full_load(file)
+
+# Format (full_name, URL) 
+plant_templates = document['plant_templates']
+
 # Email addresses to send to
-toAddress = []
+toAddress = document['toAddress']
+
 # My email secrets
-my_email = ""
-my_password = ""
+my_email = os.environ['EMAIL']
+my_password = os.environ['EMAILPASSWORD']
 
 def main():
     # If there are in-stock matches, append their template to this list
