@@ -2,7 +2,7 @@
 
 Scraper for tracking any plant restocks from Gabriella's Plants. Great for watching for ghost updates especially for high demand plants. Now you don't have to obsessively reload in hopes of catching your dream plants. Uses BeautifulSoup4, SMTP, and YAML.
 
-To run, set your email and password through the crontab file and environment variables with `EMAIL`, `EMAILPASSWORD` respsectively. Then run the script: `python3 scraper.py`.
+To run, set your email and password through the crontab file and environment variables with `EMAIL`, `EMAILPASSWORD` respsectively. For now, the email used to send the email can only be a Gmail account. Then run the script: `python3 scraper.py`.
 
 To set this running continuously, go into the crontab file to create a job and set it to the frequency that you would like it to run. I recommend running this every 30 seconds and the robot.txt file specifies that it should not be run more than once every 10 seconds. Also pipe the print output to any miscellaneous file. 
 

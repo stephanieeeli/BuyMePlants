@@ -1,10 +1,11 @@
 # Include any other plants you would like to track 
 # Format = - name: "full name of plant" 
-#             url: "full URL of plant" 
+#             url: "full URL of plant"
+# Make sure all names are entered in lowercase 
 plant_templates:
-#    - name:
-#       url: 
+#    - name: "4\" philodendron sp. rio"
+#       url: "https://www.gabriellaplants.com/collections/philodendron/products/rio-philodendron-4-original-consistent-collectors-version-of-brasil-philodendron-silver-variegation"
     
 # Add any other email addresses you would like to send to 
 toAddress: 
-#    - add email here  
+#    - email@gmail.com
