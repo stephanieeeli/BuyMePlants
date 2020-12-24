@@ -1,0 +1,36 @@
+# Include any other plants you would like to track 
+# Format = - name: "full name of plant" 
+#             url: "full URL of plant"
+# Make sure all names are entered in lowercase 
+plant_templates:
+        #- name: "4\" philodendron pink princess"
+        #url: 'https://www.gabriellaplants.com/collections/home-page/products/4-pink-princess-philodendron'
+        #- name: "5\" philodendron jose buono"
+        #url: 'https://www.gabriellaplants.com/collections/home-page/products/5-philodendron-jose-buono'
+        #- name: "4\" philodendron jose buono"
+        #url: 'https://www.gabriellaplants.com/collections/home-page/products/4-jose-bueno-philodendron'
+  - name: "3\" philodendron 'gabby' sport"
+    url: 'Check website! Not sure the link on this one because it is new'
+    # - name: "4\" philodendron burgundy princess"
+    #url: "https://www.gabriellaplants.com/collections/philodendron/products/4-burgundy-princess"
+  - name: "4\" philodendron 'gabby' sport"
+    url: 'https://www.gabriellaplants.com/collections/philodendron/products/4-gabby-philodendron-sport'
+    #- name: "4\" philodendron billietiae"
+    #url: 'https://www.gabriellaplants.com/collections/philodendron/products/4-variegated-burle-marx'
+    #- name: "4\" monstera dubia"
+    #url: 'https://www.gabriellaplants.com/collections/monstera/products/4-monstera-dubia'
+    #- name: "3\" philodendron rio" 
+    #url: "https://www.gabriellaplants.com/collections/philodendron/products/3-philodendron-rio"
+    #- name: "4\" philodendron sp. rio"
+    #url: "https://www.gabriellaplants.com/collections/philodendron/products/rio-philodendron-4-original-consistent-collectors-version-of-brasil-philodendron-silver-variegation" 
+    #- name: "4\" Syngonium podophyllum green-variegatum"
+    #url: "https://www.gabriellaplants.com/products/4-variegated-nepthytis-emerald-gem-green-variegation?_pos=13&_sid=905307920&_ss=r"
+# Add any other email addresses you would like to send to 
+toAddress: 
+  - stephanieeeli54@gmail.com
+  - sydneyc.goodman@gmail.com
+  - kiungh22@gmail.com
+  - ericlzhao28@gmail.com
+  - 19michelle.lee@gmail.com
+  - renea.aniceto@gmail.com
+  - stephkchen@gmail.com
